@@ -1,0 +1,21 @@
+<div class="login-container">
+    <h1>Login</h1>
+    <form  [formGroup]="loginForm" class="form" (ngSubmit)="Submit()">
+    <mat-form-field>
+        <input matInput placeholder="Email adress" formControlName="email" type="text">
+        <mat-error *ngIf="email?.errors?.['required']">email некорректный</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Password" formControlName="password" type="password">
+        <mat-error *ngIf="password?.errors?.['required']">пароль некорректный</mat-error>
+        <mat-hint align="end" class="forgot-password" (click)="goToForgot()">Забыли пароль?</mat-hint>
+    </mat-form-field>
+    <div class="center margin-top">
+        <button mat-raised-button color="primary" type="submit">
+            Login
+        </button>
+    </div>
+ 
+    <span> Еще не зарегистрировались?  <a class="link" (click)="goToSign()"> Регистрация...</a></span>
+    </form>  
+</div>

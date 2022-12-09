@@ -1,0 +1,32 @@
+<div class="signup-container">
+    <h1>Login</h1>
+    <form  [formGroup]="signUpForm" class="form" (ngSubmit)="submit()">
+    <mat-form-field>
+        <input matInput placeholder="Введите имя" formControlName="name" type="text">
+        <mat-error *ngIf="name?.errors?.['required']">email некорректный</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Email adress" formControlName="email" type="text">
+        <mat-error *ngIf="email?.errors?.['required']">email некорректный</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="придумайте пароль" formControlName="password" type="password">
+        <mat-error *ngIf="password?.errors?.['required']">пароль некорректный</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Повторите пароль" formControlName="confirmPassword" type="password">
+        <mat-error *ngIf="confirmPassword?.errors?.['required']">пароль некорректный</mat-error>
+    
+    </mat-form-field>
+    <mat-error *ngIf="signUpForm.errors?.['passwordsDontMatch']">
+        Пароли не совпадают
+    </mat-error>
+    <div class="center margin-top">
+        <button mat-raised-button color="primary" type="submit">
+            Login
+        </button>
+   
+    </div>
+       
+    </form>  
+</div>

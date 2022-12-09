@@ -1,0 +1,34 @@
+.login-container{
+  display: block;
+  max-width: 500px;
+  margin: auto;
+  background: #eceff1;
+  padding: 48px;
+  border-radius: 16px;
+  mat-form-field{
+    width: 100%;
+  }
+}
+.center{
+    button{
+        margin-bottom:16px ;
+    }
+}
+.link{
+    font-size: 1.2em;
+    color: blue;
+    cursor: pointer;
+    transition: all 0.6s;
+    &:hover{
+        color: rgb(238, 12, 12);
+    }
+}
+.forgot-password{
+  cursor: pointer;
+  font-size: 1.3em;
+  transition: all 0.3s;
+  color: blue;
+  &:hover{
+    color:blueviolet
+  }
+}
