@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
     <div>
-        <button mat-button routerLink="store">
+        <button mat-button routerLink="/">
             <mat-icon>home</mat-icon>
             Онлайн Аптека
           </button>
@@ -14,7 +14,7 @@
           <mat-icon>signup</mat-icon>
           Signup
         </button>
-        <ng-container *ngIf="auth.currentUser$ |async as user; else LoginButton">
+        <ng-container *ngIf="user$ |async as user; else LoginButton">
           <button mat-button [matMenuTriggerFor]="userMenu">
             <img [src]="user.photoURL ?? '/assets/images/image-placeholder.png'"
              alt="" width="30" height="30" 
@@ -29,10 +29,9 @@
              Войти
           </button>
         </ng-template>
-        
-        <button mat-button routerLink="cart">
+        <button mat-button routerLink="cart" [matBadge]= " drugService.getSum()>0?drugService.getSum():''"
+           matBadgeColor="accent" matBadgePosition="after">
             <mat-icon>shopping_cart_checkout</mat-icon>
-           <small>{{3}}</small> 
           </button>
     </div>
   </mat-toolbar>

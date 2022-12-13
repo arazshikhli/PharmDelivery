@@ -16,7 +16,9 @@ import { AuthentificationService } from './authentification.service';
   providedIn: 'root',
 })
 export class UsersService {
-  constructor(private firestore: Firestore, private authService: AuthentificationService) {}
+  constructor(private firestore: Firestore, 
+    private authService: AuthentificationService,
+    fireStore:Firestore) {}
 
   get currentUserProfile$(): Observable<ProfileUser | null> {
     return this.authService.currentUser$.pipe(
@@ -32,7 +34,7 @@ export class UsersService {
   }
 
   addUser(user: ProfileUser): Observable<void> {
-    const ref = doc(this.firestore, 'users', user.uid);
+    const ref = doc(this.firestore, 'users', user?.uid);
     return from(setDoc(ref, user));
   }
 

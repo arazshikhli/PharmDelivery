@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, Input, OnInit } from '@angular/core';
+
 import { DrugService } from 'src/app/services/drugs.service';
-import {MatCardModule} from '@angular/material/card';
-
-
-
+import { Drugs } from 'src/app/model/interfaces';
+import { async, Observable } from 'rxjs';
 @Component({
   selector: 'app-store',
   templateUrl: './store.component.html',
@@ -11,13 +11,29 @@ import {MatCardModule} from '@angular/material/card';
 })
 export class StoreComponent implements OnInit {
 
+  searchValue='';
   page=1;
-  itemsPerPage:number=10;
-  constructor(public drugService:DrugService) { }
+  itemsPerPage:number=12;
+  added:string |null;
+  toggle=true
+
+
+
+  constructor(public drugService:DrugService, ) {
+     }
 
 
   ngOnInit(): void {
+   
+  }
+  AddDrugs(drug:Drugs){
+   this.drugService.addDrug(drug);
+   
   }
   
+  RemoveDrugs(drug:Drugs){
+    this.drugService.removeDrug(drug)
+  }
+  }
 
-}
+

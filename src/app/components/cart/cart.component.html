@@ -1,1 +1,7 @@
-<p>cart works!</p>
+<div *ngFor="let drug of drugService.forCart">
+ <div class="store-card">
+   <img [src]="drug.drug.imgURL" [alt]="drug.drug.name">
+    {{drug.drug.id}}
+    {{drug.drug.name}}
+ </div>
+</div>

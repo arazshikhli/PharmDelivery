@@ -32,8 +32,9 @@ export interface CartDrug{
     drug:Drugs
     count:number
 }
-export enum Countries{
-    USA=1,
-    Russia=2,
-    Ukraine=3,
-}
+export interface Tile {
+    color: string;
+    cols: number;
+    rows: number;
+    text: string;
+  }

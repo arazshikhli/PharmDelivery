@@ -3,13 +3,22 @@
     <form  [formGroup]="loginForm" class="form" (ngSubmit)="Submit()">
     <mat-form-field>
         <input matInput placeholder="Email adress" formControlName="email" type="text">
-        <mat-error *ngIf="email?.errors?.['required']">email некорректный</mat-error>
+        <mat-error *ngIf="email?.errors?.['required']">обязательное поле</mat-error>
+        <mat-error *ngIf="email?.errors?.['email']">email некорректный</mat-error>
     </mat-form-field>
-    <mat-form-field>
-        <input matInput placeholder="Password" formControlName="password" type="password">
+    <mat-form-field appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'"  formControlName="password">
         <mat-error *ngIf="password?.errors?.['required']">пароль некорректный</mat-error>
         <mat-hint align="end" class="forgot-password" (click)="goToForgot()">Забыли пароль?</mat-hint>
-    </mat-form-field>
+        <button mat-icon-button matSuffix 
+        (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+         [attr.aria-pressed]="hide"
+         >
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
     <div class="center margin-top">
         <button mat-raised-button color="primary" type="submit">
             Login

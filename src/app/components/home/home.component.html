@@ -1,3 +1,15 @@
-<h1 *ngIf="user$ |async as user"> 
- "{{user.email}}",   Добро пожаловать в "Онлайн аптеку"
-</h1>
+
+<div class="home-page">
+    <div class="box">
+        <h1 *ngIf="user$ |async as user; else newUser"> 
+            {{user.displayName}},   Добро пожаловать в "Онлайн аптеку"
+           </h1>
+           <ng-template #newUser>
+            <div class="user-navigate">
+            <h3> Новый пользователь? <button mat-button routerLink="signup" class="btn"> Регистрация</button></h3>
+            <h3> Новый пользователь? <button mat-button routerLink="login"class="btn"> Войти</button></h3>
+            </div>
+             </ng-template>
+    </div>
+
+</div>

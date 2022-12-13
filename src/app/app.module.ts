@@ -10,6 +10,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatGridListModule} from '@angular/material/grid-list';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './auth/signup/signup.component';
 import { HomeComponent } from './components/home/home.component';
@@ -27,12 +29,15 @@ import { provideMessaging,getMessaging } from '@angular/fire/messaging';
 import { providePerformance,getPerformance } from '@angular/fire/performance';
 import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 import { provideStorage,getStorage } from '@angular/fire/storage';
-
 import { ProfileComponent } from './auth/profile/profile.component';
 import { StoreComponent } from './components/store/store.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
-
+import { ResetComponent } from './auth/reset/reset.component';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './components/store/filter.pipe';
+import { FooterComponent } from './ui/footer/footer.component';
+import { HomePipe } from './components/home/home.pipe';
 
 
 
@@ -40,12 +45,16 @@ import {NgxPaginationModule} from 'ngx-pagination';
   declarations: [
     AppComponent,
     SignupComponent,
-    HomeComponent,
     CartComponent,
     LoginComponent,
     HeaderComponent,
     ProfileComponent,
     StoreComponent,
+    ResetComponent,
+    FilterPipe,
+    FooterComponent,
+    HomePipe,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -60,8 +69,9 @@ import {NgxPaginationModule} from 'ngx-pagination';
     ReactiveFormsModule,
     MatMenuModule,
     MatCardModule,
-   
+    MatBadgeModule,
     NgxPaginationModule,
+    MatGridListModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),
@@ -73,12 +83,13 @@ import {NgxPaginationModule} from 'ngx-pagination';
     provideRemoteConfig(() => getRemoteConfig()),
     provideStorage(() => getStorage()),
     HttpClientModule,
+    FormsModule
   
   ],
   
   providers: [
     ScreenTrackingService,UserTrackingService,
-    ReactiveFormsModule
+
   ],
   bootstrap: [AppComponent]
 })
