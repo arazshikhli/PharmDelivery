@@ -20,6 +20,7 @@ const routes: Routes = [
   },
   {
     path:"login",component:LoginComponent,
+ 
     
   },
   {path:'reset',component:ResetComponent
@@ -37,9 +38,7 @@ const routes: Routes = [
  {
   path:'store',component:StoreComponent
  }
- 
-];
-
+]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

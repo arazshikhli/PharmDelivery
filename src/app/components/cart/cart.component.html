@@ -1,7 +1,43 @@
-<div *ngFor="let drug of drugService.forCart">
- <div class="store-card">
-   <img [src]="drug.drug.imgURL" [alt]="drug.drug.name">
-    {{drug.drug.id}}
-    {{drug.drug.name}}
- </div>
+<div>
+  <div *ngIf="drugService.getSum()>0; else elseBlock"
+  > <p> Всего единиц:{{drugService.getSum()}} ед.</p>
+   Result: {{drugService.getResult()}}
+ 
+  <div *ngFor="let drug of drugService.forCart">
+    <div class="store-card">
+     <div class="store-cart_image">
+       <img [src]="drug.drug.imgURL" [alt]="drug.drug.name">
+     </div>
+      <div class="store-cart_title">
+       <p> {{drug.drug.name}}</p>
+       <p> {{drug.drug.price}}</p>
+      </div>
+      <div class="store-cart_btn">
+        <button mat-button
+         (click)="PlusCount(drug)"><mat-icon>add</mat-icon></button>
+       <p>{{drug.count}}</p>
+       
+       <button mat-button 
+      (click)="MinusCount(drug)"
+       ><mat-icon>remove</mat-icon></button>
+     </div>
+      <div class="total">
+       <p>Итог: {{drug.count*drug.drug.price |currency:"AZN"}}</p>
+      </div>
+      <div store-delete >
+       <button 
+       (click)="DeleteDrug(drug)"
+       > <mat-icon>delete</mat-icon></button>
+      </div>
+    </div>
+   </div>
+   <div>
+    <p>оформить доставку</p>
+    <button mat-button routerLink="order" routerLinkActive="active">Перейти к заказу</button>
+   </div>
+  
+   </div>
+   <ng-template #elseBlock>
+    <p>Корзина пуста</p>
+   </ng-template>
 </div>

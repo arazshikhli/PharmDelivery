@@ -38,6 +38,7 @@ import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './components/store/filter.pipe';
 import { FooterComponent } from './ui/footer/footer.component';
 import { HomePipe } from './components/home/home.pipe';
+import { OrderdeliveryComponent } from './components/orderdelivery/orderdelivery.component';
 
 
 
@@ -54,7 +55,8 @@ import { HomePipe } from './components/home/home.pipe';
     FilterPipe,
     FooterComponent,
     HomePipe,
-    HomeComponent
+    HomeComponent,
+    OrderdeliveryComponent
   ],
   imports: [
     BrowserModule,

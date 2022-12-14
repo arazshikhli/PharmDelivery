@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { CartDrug, Drugs } from '../model/interfaces';
 
 
@@ -9,11 +10,13 @@ import { CartDrug, Drugs } from '../model/interfaces';
 export class DrugService implements OnInit{
   drugs:Drugs[]=[];
   forCart:CartDrug[]=[];
-  forCartSumm=0;
   drugCounter!:number;
   randomDrugs:Drugs[]=[];
-  added!:string|null
-  constructor(private http:HttpClient) {
+  added:string|null;
+
+  constructor(private http:HttpClient,
+    
+    ) {
     this.http.get<Drugs[]>('assets/drugs.json').subscribe((response)=>{
       this.drugs=response;
       this.drugCounter=this.drugs.length;
@@ -21,10 +24,12 @@ export class DrugService implements OnInit{
     })
   
   }
+  getDrugs(){
+    return this.http.get<Drugs[]>('assets/drugs.json')
+  }
   ngOnInit(){
 
   }
-
   FavoriteDrugs():Drugs[]{
     let firstIndex=Math.floor(Math.random()*26) ;
     let secondIndex=firstIndex+5;
@@ -40,15 +45,39 @@ export class DrugService implements OnInit{
     }
     return sum
   }
+  public getResult():number{
+    let a=0;
+    let result=0;
+ for(let d of this.forCart){
+  result+=d.count*d.drug.price
+ }
+ return result
+  }
   
   addDrug(drug:Drugs){
+    localStorage.setItem(`${drug.id}`,`${drug.name}`)
       this.forCart.push({id:drug.id,drug:drug,count:1})
-    
+     this.added=localStorage.getItem(`${drug.id}`);
+
   }
-  removeDrug(drug:Drugs){
-    let a=this.forCart.filter(p=>{
-      p.drug.id===drug.id
-    });
-    console.log(a)
+ 
+  // getResult(){
+  //   for(let drugs of this.forCart){
+  //     this.results=drugs.count*drugs.drug.price
+  //   }
+  // }
+  plusCount(drug:CartDrug){
+    drug.count+=1
+  }
+  minusCount(drug:CartDrug){
+    if(drug.count>0){
+      drug.count-=1;
+    }
+    if(drug.count===0){
+      this.forCart.splice(this.forCart.indexOf(drug),1)
+    }
+  }
+  deleteDrugFromCart(drug:CartDrug){
+    this.forCart.splice(this.forCart.indexOf(drug),1)
   }
 }
