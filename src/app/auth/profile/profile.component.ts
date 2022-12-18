@@ -6,6 +6,7 @@ import {HotToastService} from '@ngneat/hot-toast';
 import {concatMap, switchMap} from 'rxjs';
 import { ProfileUser } from 'src/app/model/interfaces';
 import { FormControl, FormGroup } from '@angular/forms';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-profile',
@@ -27,10 +28,12 @@ export class ProfileComponent implements OnInit {
   })
   constructor(private auth:AuthentificationService,
     private imageService:ImageUploadService,
-    private toast:HotToastService
+    private toast:HotToastService,
+    private usersService:UsersService
     ) { }
 
   ngOnInit(): void {
+   
   }
 
   uploadImage(event:any,user:User){
@@ -44,6 +47,6 @@ export class ProfileComponent implements OnInit {
    ).subscribe();
   }
   saveProfile(){
-    
+
   }
 }

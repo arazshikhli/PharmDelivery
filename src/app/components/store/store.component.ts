@@ -3,7 +3,9 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { DrugService } from 'src/app/services/drugs.service';
 import { Drugs } from 'src/app/model/interfaces';
-import { async, Observable, Subscription } from 'rxjs';
+import { FormControl } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import {FormBuilder} from '@angular/forms';
 @Component({
   selector: 'app-store',
   templateUrl: './store.component.html',
@@ -18,9 +20,12 @@ export class StoreComponent implements OnInit {
   toggle=false
   drugs:Drugs[]
   drugSubScription:Subscription
-
-  @Input()key:string
-  constructor(public drugService:DrugService, ) {
+  countries:string[]
+  checker=false;
+  russia=false;
+  constructor(public drugService:DrugService,
+    private _formBuilder: FormBuilder
+    ) {
   
      }
 
@@ -28,20 +33,16 @@ export class StoreComponent implements OnInit {
     this.drugSubScription=this.drugService.getDrugs().subscribe((data)=>{
       this.drugs=data;
     })
-
   }
   ngOnDestroy(){
     if (this.drugSubScription) this.drugSubScription.unsubscribe();
   }
   AddDrugs(drug:Drugs){
    this.drugService.addDrug(drug);
-    console.log("add",this.added)
+   this.added=localStorage.getItem(drug.id.toString())
+   console.log(this.added)
   }
-  // RemoveDrug(drug:Drugs){
-  //   this.drugService.deleteDrug(drug)
-  //   console.log("remove",this.added)
-  // }
-
+ 
   }
 
 

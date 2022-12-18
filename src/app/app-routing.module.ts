@@ -8,6 +8,7 @@ import { canActivate,redirectUnauthorizedTo,redirectLoggedInTo } from '@angular/
 import { ProfileComponent } from './auth/profile/profile.component';
 import { StoreComponent } from './components/store/store.component';
 import { ResetComponent } from './auth/reset/reset.component';
+import { OrderComponent } from './components/order/order.component';
 const redirectToLogin=()=>redirectUnauthorizedTo(['login']);
 const redirectToHome=()=>redirectLoggedInTo(['/'])
 const routes: Routes = [
@@ -28,7 +29,9 @@ const routes: Routes = [
     },
   {
     path:"cart",component:CartComponent,
-    ...canActivate(redirectToLogin)
+    ...canActivate(redirectToLogin),children:[{
+    path:'order',component:OrderComponent
+  }]
   },
 
   {

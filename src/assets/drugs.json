@@ -32,6 +32,86 @@
     "country":"Беларусь"
   },
   {
+    "id": 22,
+    "name": "Daktazol",
+    "price": 13.0,
+    "imgURL": "assets/drugs/daktazol.jpg",
+    "byPrescription": true,
+    "country":"Нидерланды"
+  },
+  {
+    "id": 23,
+    "name": "Pantap",
+    "price": 13.7,
+    "imgURL": "assets/drugs/pantap.jpg",
+    "byPrescription": false,
+    "country":"Нидерланды"
+  },
+  {
+    "id": 24,
+    "name": "Atarax",
+    "price": 13.7,
+    "imgURL": "assets/drugs/atarax.jpg",
+    "byPrescription": true,
+    "country":"Нидерланды"
+  },
+  {
+    "id": 25,
+    "name": "Sepranol",
+    "price": 13.7,
+    "imgURL": "https://www.vidal.ru/upload/product_photo/sepranol.jpg",
+    "byPrescription": true,
+    "country":"Нидерланды"
+  },
+  {
+    "id": 26,
+    "name": "Daktazol",
+    "price": 13.0,
+    "imgURL": "assets/drugs/daktazol.jpg",
+    "byPrescription": true,
+    "country":"Нидерланды"
+  },
+  {
+    "id": 27,
+    "name": "Refcon",
+    "price": 14.10,
+    "imgURL": "assets/drugs/refcon.jpg",
+    "byPrescription": false,
+    "country":"Нидерланды"
+  },
+  {
+    "id": 28,
+    "name": "Pantap",
+    "price": 13.7,
+    "imgURL": "assets/drugs/pantap.jpg",
+    "byPrescription": false,
+    "country":"Нидерланды"
+  },
+  {
+    "id": 29,
+    "name": "Atarax",
+    "price": 13.7,
+    "imgURL": "assets/drugs/atarax.jpg",
+    "byPrescription": true,
+    "country":"Нидерланды"
+  },
+  {
+    "id": 30,
+    "name": "Sepranol",
+    "price": 13.7,
+    "imgURL": "https://www.vidal.ru/upload/product_photo/sepranol.jpg",
+    "byPrescription": true,
+    "country":"Нидерланды"
+  },
+  {
+    "id": 31,
+    "name": "Daktazol",
+    "price": 13.0,
+    "imgURL": "assets/drugs/daktazol.jpg",
+    "byPrescription": true,
+    "country":"Нидерланды"
+  },
+  {
     "id": 4,
     "name": "Nurofen",
     "price": 33,
@@ -291,86 +371,6 @@
     "name": "Sepranol",
     "price": 13.7,
     "imgURL": "https://www.vidal.ru/upload/product_photo/sepranol.jpg",
-    "byPrescription": true,
-    "country":"Нидерланды"
-  },
-  {
-    "id": 22,
-    "name": "Daktazol",
-    "price": 13.0,
-    "imgURL": "assets/drugs/daktazol.jpg",
-    "byPrescription": true,
-    "country":"Нидерланды"
-  },
-  {
-    "id": 23,
-    "name": "Pantap",
-    "price": 13.7,
-    "imgURL": "assets/drugs/pantap.jpg",
-    "byPrescription": false,
-    "country":"Нидерланды"
-  },
-  {
-    "id": 24,
-    "name": "Atarax",
-    "price": 13.7,
-    "imgURL": "assets/drugs/atarax.jpg",
-    "byPrescription": true,
-    "country":"Нидерланды"
-  },
-  {
-    "id": 25,
-    "name": "Sepranol",
-    "price": 13.7,
-    "imgURL": "https://www.vidal.ru/upload/product_photo/sepranol.jpg",
-    "byPrescription": true,
-    "country":"Нидерланды"
-  },
-  {
-    "id": 26,
-    "name": "Daktazol",
-    "price": 13.0,
-    "imgURL": "assets/drugs/daktazol.jpg",
-    "byPrescription": true,
-    "country":"Нидерланды"
-  },
-  {
-    "id": 27,
-    "name": "Refcon",
-    "price": 14.10,
-    "imgURL": "assets/drugs/refcon.jpg",
-    "byPrescription": false,
-    "country":"Нидерланды"
-  },
-  {
-    "id": 28,
-    "name": "Pantap",
-    "price": 13.7,
-    "imgURL": "assets/drugs/pantap.jpg",
-    "byPrescription": false,
-    "country":"Нидерланды"
-  },
-  {
-    "id": 29,
-    "name": "Atarax",
-    "price": 13.7,
-    "imgURL": "assets/drugs/atarax.jpg",
-    "byPrescription": true,
-    "country":"Нидерланды"
-  },
-  {
-    "id": 30,
-    "name": "Sepranol",
-    "price": 13.7,
-    "imgURL": "https://www.vidal.ru/upload/product_photo/sepranol.jpg",
-    "byPrescription": true,
-    "country":"Нидерланды"
-  },
-  {
-    "id": 31,
-    "name": "Daktazol",
-    "price": 13.0,
-    "imgURL": "assets/drugs/daktazol.jpg",
     "byPrescription": true,
     "country":"Нидерланды"
   }

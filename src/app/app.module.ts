@@ -12,6 +12,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './auth/signup/signup.component';
 import { HomeComponent } from './components/home/home.component';
@@ -38,7 +40,10 @@ import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './components/store/filter.pipe';
 import { FooterComponent } from './ui/footer/footer.component';
 import { HomePipe } from './components/home/home.pipe';
-import { OrderdeliveryComponent } from './components/orderdelivery/orderdelivery.component';
+import { OrderComponent } from './components/order/order.component';
+import { PrescriptionPipe } from './components/store/prescription.pipe';
+import { CountriesPipe } from './components/store/countries.pipe';
+
 
 
 
@@ -56,7 +61,10 @@ import { OrderdeliveryComponent } from './components/orderdelivery/orderdelivery
     FooterComponent,
     HomePipe,
     HomeComponent,
-    OrderdeliveryComponent
+    OrderComponent,
+    PrescriptionPipe,
+    CountriesPipe,
+   
   ],
   imports: [
     BrowserModule,
@@ -74,6 +82,8 @@ import { OrderdeliveryComponent } from './components/orderdelivery/orderdelivery
     MatBadgeModule,
     NgxPaginationModule,
     MatGridListModule,
+    MatSelectModule,
+    MatCheckboxModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),
@@ -86,12 +96,10 @@ import { OrderdeliveryComponent } from './components/orderdelivery/orderdelivery
     provideStorage(() => getStorage()),
     HttpClientModule,
     FormsModule
-  
   ],
   
   providers: [
     ScreenTrackingService,UserTrackingService,
-
   ],
   bootstrap: [AppComponent]
 })

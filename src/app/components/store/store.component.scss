@@ -1,7 +1,11 @@
-
+.store{
+  font-family: 'Exo 2',sans-serif;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
 .example-form {
     min-width: 150px;
-
     width: 100%;
   }
   
@@ -20,7 +24,6 @@
     font-weight: bold;
     .search-parameters{
         width: 20%;
-       
         .search-inner{
             width: 90%;
             height: 300px;
@@ -41,6 +44,7 @@
   height: 260px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background-color: aliceblue;
   margin: 5px;
   border: 1px solid aliceblue;
@@ -49,7 +53,7 @@
 
   .card-image{
     width: 100%;
-    height: 120px;
+    height: 100px;
     min-height: 120px;
     display: flex;
     flex-direction: row;
@@ -60,14 +64,17 @@
       height: 100%;
     }
   }
-  .card-title{
+  .card-info{
     width: 100%;
     height: 120px;
     min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .card-button{
     width: 100%;
-    height: 20px;
     min-height: 20px;
     display: flex;
     flex-direction: row;
@@ -75,9 +82,7 @@
     justify-content: center;
   }
  }
-.red-btn{
-  background-color: red;
-}
+
 .green-btn{
   background-color: green;
 }

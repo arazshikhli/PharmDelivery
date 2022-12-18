@@ -13,7 +13,7 @@ export class DrugService implements OnInit{
   drugCounter!:number;
   randomDrugs:Drugs[]=[];
   added:string|null;
-
+  countries:string[]
   constructor(private http:HttpClient,
     
     ) {
@@ -55,17 +55,15 @@ export class DrugService implements OnInit{
   }
   
   addDrug(drug:Drugs){
-    localStorage.setItem(`${drug.id}`,`${drug.name}`)
+    for(let d of this.forCart){
+      if(d.drug.id===drug.id){
+        localStorage.setItem(`${drug.id}`,`${drug.name}`)
+        return
+      }
+    }
       this.forCart.push({id:drug.id,drug:drug,count:1})
-     this.added=localStorage.getItem(`${drug.id}`);
-
   }
- 
-  // getResult(){
-  //   for(let drugs of this.forCart){
-  //     this.results=drugs.count*drugs.drug.price
-  //   }
-  // }
+
   plusCount(drug:CartDrug){
     drug.count+=1
   }
@@ -80,4 +78,6 @@ export class DrugService implements OnInit{
   deleteDrugFromCart(drug:CartDrug){
     this.forCart.splice(this.forCart.indexOf(drug),1)
   }
+
+
 }

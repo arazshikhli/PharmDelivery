@@ -1,4 +1,5 @@
-<div style="width: 100%;">
+<div class="store">
+  <div style="width: 100%;">
     <form class="example-form">
         <mat-form-field class="example-full-width">
           <mat-label>Поиск</mat-label>
@@ -8,16 +9,13 @@
 </div>
 <div class="wrapper">
     <div class="search-parameters">
-        <div class="search-inner">
-          <h1>Страна производитель</h1>
-          <table>
 
-          </table>
-        </div>
+        <p>Срецептом <input type="checkbox" [(ngModel)]="checker"> </p>
+  
         <div class="search-inner"></div>
     </div>
     <div class="cards">
-       <div class="card" *ngFor="let drug of drugs|filter:searchValue|paginate:{itemsPerPage:itemsPerPage,currentPage:page};let i=index">
+       <div class="card" *ngFor="let drug of drugs|prescription:checker|filter:searchValue|paginate:{itemsPerPage:itemsPerPage,currentPage:page};let i=index">
         <div class="card-image"><img [src]="drug.imgURL" [alt]="drug.name"></div>
         <div class="card-info">
           <p>{{drug.name}}</p>
@@ -25,15 +23,17 @@
           <p>{{drug.price|currency:'AZN'}}</p>
         </div>
         <div class="card-button">
-          <button mat-button (click)="AddDrugs(drug)" 
-          [class]="added?'red-btn':'green-btn'"
+          <button mat-button (click)=" AddDrugs(drug)" 
+          class="green-btn"
           >Add</button>
-         
+          <mat-error *ngIf="added===drug.id.toString()">Добавлено</mat-error>
         </div>
        </div>
     </div>
 </div>
-<pagination-controls (pageChange)="page = $event"></pagination-controls>
+<pagination-controls (pageChange)="page = $event" previousLabel="След." nextLabel="Пред."></pagination-controls>
+
+</div>
 
 
 
