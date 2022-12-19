@@ -13,7 +13,8 @@ export class DrugService implements OnInit{
   drugCounter!:number;
   randomDrugs:Drugs[]=[];
   added:string|null;
-  countries:string[]
+  countries:string[];
+  imageURLs:string[]
   constructor(private http:HttpClient,
     
     ) {

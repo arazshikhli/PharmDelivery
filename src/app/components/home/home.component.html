@@ -11,5 +11,24 @@
             </div>
              </ng-template>
     </div>
+    
+<div class="swiper"
+>
+<swiper mat-card-avatar
+class="my-swiper"
+[scrollbar]="{draggable:true}"
+[navigation]="true">
+<p>Товары дня</p>
+    <ng-container *ngFor="let drug of drugs|favorite; index as i">
+        <ng-template swiperSlide>
+                <img [src]="drug.imgURL" alt="">
+                <p>{{drug.name}}</p>
+                <p>{{drug.price}}</p>
+                <button class="btn" mat-button (click)="AddToCart(drug)">В корзину</button>
+        </ng-template>
+    </ng-container>
+</swiper>
+</div>
 
 </div>
+
