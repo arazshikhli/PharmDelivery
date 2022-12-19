@@ -1,18 +1,16 @@
-@import 'swiper/scss';
-@import 'swiper/scss/navigation';
-@import 'swiper/scss/pagination';
 .home-page{
     display: flex;
     width: 100%;
+
     flex-direction: column;
 
 }
 .home-page_first-section{
     display: flex;
+
     flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
 }
+
 
 .my-swiper {
     height: 90%;
@@ -46,6 +44,7 @@
         cursor: pointer;
     }
 }
+
 
 .box{
     width: 300px;

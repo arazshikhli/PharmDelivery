@@ -43,9 +43,6 @@ import { HomePipe } from './components/home/home.pipe';
 import { OrderComponent } from './components/order/order.component';
 import { PrescriptionPipe } from './components/store/prescription.pipe';
 import { CountriesPipe } from './components/store/countries.pipe';
-import { SwiperModule } from 'swiper/angular';
-import { FavoritePipe } from './components/home/favorite.pipe';
-import { StoreModule } from '@ngrx/store';
 
 
 
@@ -66,7 +63,6 @@ import { StoreModule } from '@ngrx/store';
     OrderComponent,
     PrescriptionPipe,
     CountriesPipe,
-    FavoritePipe,
    
   ],
   imports: [
@@ -98,9 +94,7 @@ import { StoreModule } from '@ngrx/store';
     provideRemoteConfig(() => getRemoteConfig()),
     provideStorage(() => getStorage()),
     HttpClientModule,
-    FormsModule,
-    SwiperModule,
-    StoreModule.forRoot({}, {})
+    FormsModule
   ],
   
   providers: [
