@@ -55,6 +55,17 @@ swiperConfig: any = {
   pagination: { clickable: true },
   scrollbar: { draggable: true },
 }
+config: SwiperOptions = {
+  slidesPerView: 3,
+  spaceBetween: 50,
+  navigation: true,
+  pagination: { clickable: true },
+  scrollbar: { draggable: true },
+};
+
+onSlideChange() {
+  console.log('slide change');
+}
 
 AddToCart(drug:Drugs){
   this.drugService.addDrug(drug);

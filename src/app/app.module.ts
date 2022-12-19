@@ -45,6 +45,7 @@ import { PrescriptionPipe } from './components/store/prescription.pipe';
 import { CountriesPipe } from './components/store/countries.pipe';
 import { SwiperModule } from 'swiper/angular';
 import { FavoritePipe } from './components/home/favorite.pipe';
+import { StoreModule } from '@ngrx/store';
 
 
 
@@ -98,7 +99,8 @@ import { FavoritePipe } from './components/home/favorite.pipe';
     provideStorage(() => getStorage()),
     HttpClientModule,
     FormsModule,
-    SwiperModule
+    SwiperModule,
+    StoreModule.forRoot({}, {})
   ],
   
   providers: [

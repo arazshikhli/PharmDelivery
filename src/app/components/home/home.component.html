@@ -1,5 +1,5 @@
-
 <div class="home-page">
+<div class="home-page_first-section">
     <div class="box">
         <h1 *ngIf="user$ |async as user; else newUser"> 
             {{user.displayName}},   Добро пожаловать в "Онлайн аптеку"
@@ -11,7 +11,7 @@
             </div>
              </ng-template>
     </div>
-    
+  
 <div class="swiper"
 >
 <swiper mat-card-avatar
@@ -31,4 +31,24 @@ class="my-swiper"
 </div>
 
 </div>
+<div class="home-page_advert">
+    <swiper
+    [slidesPerView]="3"
+    [spaceBetween]="50"
+    
+    (slideChange)="onSlideChange()"
+    [navigation]="true"
+    [pagination]="{ clickable: true }"
+    [scrollbar]="{ draggable: true }"
+  >
+    <ng-template swiperSlide>Slide 1</ng-template>
+    <ng-template swiperSlide>Slide 2</ng-template>
+    <ng-template swiperSlide>Slide 3</ng-template>
+    <ng-template swiperSlide>Slide 4</ng-template>
+    <ng-template swiperSlide>Slide 5</ng-template>
+    <ng-template swiperSlide>Slide 6</ng-template>
+  </swiper>
+</div>
+</div>
+
 
