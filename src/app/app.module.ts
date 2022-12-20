@@ -42,6 +42,8 @@ import { OrderdeliveryComponent } from './components/orderdelivery/orderdelivery
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
+import { DrugsReducer } from './drugs.reducer';
+import { DrugsStoreService } from './drugs-store.service';
 
 
 
@@ -89,7 +91,7 @@ import { EffectsModule } from '@ngrx/effects';
     provideStorage(() => getStorage()),
     HttpClientModule,
     FormsModule,
-    StoreModule.forRoot({},{
+    StoreModule.forRoot({drugs:DrugsReducer},{
 
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production}),
@@ -99,7 +101,7 @@ import { EffectsModule } from '@ngrx/effects';
   
   providers: [
     ScreenTrackingService,UserTrackingService,
-
+    DrugsStoreService
   ],
   bootstrap: [AppComponent]
 })
