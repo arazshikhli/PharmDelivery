@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,6 +39,9 @@ import { FilterPipe } from './components/store/filter.pipe';
 import { FooterComponent } from './ui/footer/footer.component';
 import { HomePipe } from './components/home/home.pipe';
 import { OrderdeliveryComponent } from './components/orderdelivery/orderdelivery.component';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
 
 
 
@@ -85,7 +88,12 @@ import { OrderdeliveryComponent } from './components/orderdelivery/orderdelivery
     provideRemoteConfig(() => getRemoteConfig()),
     provideStorage(() => getStorage()),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forRoot({},{
+
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production}),
+    EffectsModule.forRoot([])
   
   ],
   
