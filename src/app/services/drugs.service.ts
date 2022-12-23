@@ -13,7 +13,7 @@ export class DrugService implements OnInit{
   drugCounter!:number;
   randomDrugs:Drugs[]=[];
   added:string|null;
-
+   cartDrugList:Drugs[]=[]
   constructor(private http:HttpClient,
     
     ) {
@@ -40,8 +40,8 @@ export class DrugService implements OnInit{
   }
   public getSum():number{
     let sum=0;
-    for(let i=0;i<this.forCart.length;i++){
-      sum+=this.forCart[i].count
+    for(let i=0;i<this.cartDrugList.length;i++){
+      sum+=this.cartDrugList[i].quantity
     }
     return sum
   }
@@ -54,13 +54,19 @@ export class DrugService implements OnInit{
  return result
   }
   
-  addDrug(drug:Drugs){
-    localStorage.setItem(`${drug.id}`,`${drug.name}`)
-      this.forCart.push({id:drug.id,drug:drug,count:1})
-     this.added=localStorage.getItem(`${drug.id}`);
 
+  AddToCart(drug:Drugs):boolean{
+    if(!this.cartDrugList.includes(drug)){
+      drug.quantity+=1;
+      this.cartDrugList.push(drug);
+      return true
+    }
+    return false
   }
- 
+  removeDrug(drug:Drugs){
+    this.cartDrugList.unshift(drug);
+    localStorage.removeItem(`${drug.id}`);
+  }
   // getResult(){
   //   for(let drugs of this.forCart){
   //     this.results=drugs.count*drugs.drug.price

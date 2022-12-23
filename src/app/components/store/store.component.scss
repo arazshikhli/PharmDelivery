@@ -41,6 +41,7 @@
   height: 260px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background-color: aliceblue;
   margin: 5px;
   border: 1px solid aliceblue;
@@ -67,7 +68,7 @@
   }
   .card-button{
     width: 100%;
-    height: 20px;
+    
     min-height: 20px;
     display: flex;
     flex-direction: row;
@@ -80,4 +81,19 @@
 }
 .green-btn{
   background-color: green;
+}
+@media (max-width:1000px){
+  .cards{
+    justify-content: center;
+  }
+}
+.card-info{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ p{
+  margin: 0;
+ }
 }

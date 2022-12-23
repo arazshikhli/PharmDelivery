@@ -1,15 +1,74 @@
-
 <div class="home-page">
     <div class="box">
-        <h1 *ngIf="user$ |async as user; else newUser"> 
+        <h3 *ngIf="user$ |async as user; else newUser"> 
             {{user.displayName}},   Добро пожаловать в "Онлайн аптеку"
-           </h1>
+           </h3>
            <ng-template #newUser>
             <div class="user-navigate">
-            <h3> Новый пользователь? <button mat-button routerLink="signup" class="btn"> Регистрация</button></h3>
-            <h3> Новый пользователь? <button mat-button routerLink="login"class="btn"> Войти</button></h3>
+            <div>
+            <h3> Новый пользователь: <button mat-button routerLink="signup" class="btn"> Регистрация</button></h3>
+            </div>
+            <div>
+                 <h3> Есть аккаунт: <button mat-button routerLink="login"class="btn"> Войти</button></h3></div>
             </div>
              </ng-template>
-    </div>
+</div>
+<div class="home-page__adverts">
+    <div class="adverts__advert-swiper">
+        <swiper
+        [slidesPerView]="1"
+        [spaceBetween]="50"
+        [pagination]="{clickable:true}"
+        [navigation]="true"
+         class="my-swiper"
+        >
+        <ng-template swiperSlide > <a  (click)="goToAdvert(1)">
+            <img src="../../../assets/advert/1.webp" alt="" class="slider-img">
+        </a></ng-template>
+        <ng-template swiperSlide > <a   (click)="goToAdvert(2)">
+            <img src="../../../assets/advert/2.webp" alt="" class="slider-img">
+        </a></ng-template>
+        v
+        <ng-template swiperSlide > <a   (click)="goToAdvert(3)">
+            <img src="../../../assets/advert/3.webp" alt="" class="slider-img">
+        </a></ng-template>
+        <ng-template swiperSlide > <a   (click)="goToAdvert(4)">
+            <img src="../../../assets/advert/4.webp" alt="" class="slider-img">
+        </a></ng-template>
+        <ng-template swiperSlide > <a  (click)="goToAdvert(5)">
+            <img src="../../../assets/advert/5.webp" alt="" class="slider-img">
+        </a></ng-template>
+        <ng-template swiperSlide > <a  (click)="goToAdvert(6)">
+            <img src="../../../assets/advert/6.webp" alt="" class="slider-img">
+        </a></ng-template>
+        </swiper>
+        </div>
+        <div class="adverts__day-drugs-list">
+            <h3>Товары дня</h3>
+            <swiper
+            [config]="swiperConfig"
+            [slidesPerView]="3"
+            [navigation]="true"
+            [keyboard]="{
+              enabled: true
+            }"
+            
+            [virtual]="true"
+            class="my-swiper"
+            (swiper)="setSwiperInstance($event)"
+            [slidesPerView]="3" [spaceBetween]="0" [navigation]="{}"
+             [scrollbar]="{ draggable: true }" [watchSlidesProgress]="true"
+            >
+                <ng-template swiperSlide *ngFor="let drug of drugService.drugs">
+                    <div>
+                        <img [src]="drug.imgURL" alt="" style="width: 200px;height: 200px;">
+                        <p>{{drug.name}}</p>
+                    </div>
+                    
+                </ng-template>
+            </swiper>
+        </div>
+</div>
 
 </div>
+

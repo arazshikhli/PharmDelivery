@@ -44,7 +44,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { DrugsReducer } from './drugs.reducer';
 import { DrugsStoreService } from './drugs-store.service';
-
+import { SwiperModule } from 'swiper/angular';
+import { AdvertDrugsComponent } from './components/home/advert-drugs/advert-drugs.component';
 
 
 @NgModule({
@@ -61,7 +62,9 @@ import { DrugsStoreService } from './drugs-store.service';
     FooterComponent,
     HomePipe,
     HomeComponent,
-    OrderdeliveryComponent
+    OrderdeliveryComponent,
+    AdvertDrugsComponent,
+ 
   ],
   imports: [
     BrowserModule,
@@ -91,6 +94,7 @@ import { DrugsStoreService } from './drugs-store.service';
     provideStorage(() => getStorage()),
     HttpClientModule,
     FormsModule,
+    SwiperModule,
     StoreModule.forRoot({drugs:DrugsReducer},{
 
     }),
@@ -101,7 +105,8 @@ import { DrugsStoreService } from './drugs-store.service';
   
   providers: [
     ScreenTrackingService,UserTrackingService,
-    DrugsStoreService
+    DrugsStoreService,
+
   ],
   bootstrap: [AppComponent]
 })

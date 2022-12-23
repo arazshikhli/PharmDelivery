@@ -4,7 +4,9 @@ export interface Drugs{
     price:number
     imgURL:string
     byPrescription:boolean
-    country:String
+    country:String,
+    quantity:number
+
 }
 export interface ProfileUser {
     uid: string;

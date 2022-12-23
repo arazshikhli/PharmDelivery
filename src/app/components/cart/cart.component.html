@@ -3,31 +3,31 @@
   > <p> Всего единиц:{{drugService.getSum()}} ед.</p>
    Result: {{drugService.getResult()}}
  
-  <div *ngFor="let drug of drugService.forCart">
+  <div *ngFor="let drug of cartDrugs">
     <div class="store-card">
      <div class="store-cart_image">
-       <img [src]="drug.drug.imgURL" [alt]="drug.drug.name">
+       <img [src]="drug.imgURL" [alt]="drug.name">
      </div>
       <div class="store-cart_title">
-       <p> {{drug.drug.name}}</p>
-       <p> {{drug.drug.price}}</p>
+       <p> {{drug.name}}</p>
+       <p> {{drug.price}}</p>
       </div>
       <div class="store-cart_btn">
-        <button mat-button
-         (click)="PlusCount(drug)"><mat-icon>add</mat-icon></button>
-       <p>{{drug.count}}</p>
+        <!-- <button mat-button
+         (click)="PlusCount(drug)"><mat-icon>add</mat-icon></button> -->
+       <p>{{drug.quantity}}</p>
        
-       <button mat-button 
+       <!-- <button mat-button 
       (click)="MinusCount(drug)"
-       ><mat-icon>remove</mat-icon></button>
+       ><mat-icon>remove</mat-icon></button> -->
      </div>
       <div class="total">
-       <p>Итог: {{drug.count*drug.drug.price |currency:"AZN"}}</p>
+       <p>Итог: {{drug.quantity*drug.price |currency:"AZN"}}</p>
       </div>
       <div store-delete >
-       <button 
+       <!-- <button 
        (click)="DeleteDrug(drug)"
-       > <mat-icon>delete</mat-icon></button>
+       > <mat-icon>delete</mat-icon></button> -->
       </div>
     </div>
    </div>

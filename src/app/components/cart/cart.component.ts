@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CartDrug } from 'src/app/model/interfaces';
+import { CartDrug, Drugs } from 'src/app/model/interfaces';
 import { DrugService } from 'src/app/services/drugs.service';
 
 @Component({
@@ -10,12 +10,12 @@ import { DrugService } from 'src/app/services/drugs.service';
 export class CartComponent implements OnInit {
 
   switcher:boolean=true;
-  cartDrugs=this.drugService.forCart
+  cartDrugs:Drugs[]
   constructor(public drugService:DrugService) { }
   result:number
 
   ngOnInit(): void {
-
+this.cartDrugs=this.drugService.cartDrugList;
   }
   MinusCount(drugs:CartDrug){
     this.drugService.minusCount(drugs)

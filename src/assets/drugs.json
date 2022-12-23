@@ -5,7 +5,8 @@
     "price": 20,
     "imgURL": "https://cdn.shopify.com/s/files/1/0066/7569/3639/products/NM2803L601VITCGUMMIESfront_2e1ab215-1d23-4e1c-a0c6-310d10a60945_1500x.png?v=1659456973",
     "byPrescription": true,
-    "country":"Россия"
+    "country":"Россия",
+    "quantity":0
   },
   {
     "id": 1,
@@ -13,7 +14,8 @@
     "price": 25,
     "imgURL": "https://www.pharmaciedesteinfort.com/media/catalog/product/cache/cd30c5c2a49353086bf9c7be9820feea/a/s/aspirine-100-mg-30-comprimes-0002.jpg",
     "byPrescription": false,
-    "country":"США"
+    "country":"США",
+    "quantity":0
   },
   {
     "id": 2,
@@ -21,7 +23,8 @@
     "price": 33,
     "imgURL": "./assets/drugs/angilor.png",
     "byPrescription": false,
-    "country":"Украина"
+    "country":"Украина",
+    "quantity":0
   },
   {
     "id": 3,
@@ -29,7 +32,8 @@
     "price": 33,
     "imgURL": "assets/drugs/bromgeksin.jpg",
     "byPrescription": false,
-    "country":"Беларусь"
+    "country":"Беларусь",
+    "quantity":0
   },
   {
     "id": 4,
@@ -37,7 +41,8 @@
     "price": 33,
     "imgURL": "assets/drugs/nurofen.jpg",
     "byPrescription": true,
-    "country":"Россия"
+    "country":"Россия",
+    "quantity":0
   },
   {
     "id": 5,
@@ -45,14 +50,16 @@
     "price": 33,
     "imgURL": "assets/drugs/mezim.png",
     "byPrescription": true,
-    "country":"Россия"
+    "country":"Россия",
+    "quantity":0
   },
   {
     "id": 6,
     "name": "Tempalgin",
     "price": 33,
     "imgURL": "assets/drugs/tempalgin.jpg",
-    "country":"Беларусь"
+    "country":"Беларусь",
+    "quantity":0
   },
   {
     "id": 7,
@@ -60,7 +67,8 @@
     "price": 5,
     "imgURL": "https://cdn.rigla.ru/media/catalog/product/cache/1e8ef93b9b4867ab9f3538dde2cb3b8a/4/4/4455490-d-9-d-4-d9d42b24c815a7e09b6efce23b13e61e4838becc_4455490.jpg",
     "byPrescription": true,
-    "country":"Беларусь"
+    "country":"Беларусь",
+    "quantity":0
   },
   {
     "id": 8,
@@ -68,7 +76,8 @@
     "price": 33,
     "imgURL": "assets/drugs/tempalgin.jpg",
     "byPrescription": true,
-    "country":"Израиль"
+    "country":"Израиль",
+    "quantity":0
   },
   {
     "id": 9,
@@ -76,7 +85,8 @@
     "price": 33,
     "imgURL": "assets/drugs/tempalgin.jpg",
     "byPrescription": true,
-    "country":"Германия"
+    "country":"Германия",
+    "quantity":0
   },
   {
     "id": 10,
@@ -84,7 +94,8 @@
     "price": 33,
     "imgURL": "assets/drugs/tempalgin.jpg",
     "byPrescription": true,
-    "country":"Германия"
+    "country":"Германия",
+    "quantity":0
   },
   {
     "id": 11,
@@ -92,7 +103,8 @@
     "price": 2.30,
     "imgURL": "assets/drugs/tempalgin.jpg",
     "byPrescription": true,
-    "country":"Беларусь"
+    "country":"Беларусь",
+    "quantity":0
   },
   {
     "id": 12,
@@ -100,7 +112,8 @@
     "price": 2.8,
     "imgURL": "assets/drugs/glicin.jpg",
     "byPrescription": false,
-    "country":"Германия"
+    "country":"Германия",
+    "quantity":0
   },
   {
     "id": 13,
@@ -108,7 +121,8 @@
     "price": 14.10,
     "imgURL": "assets/drugs/refcon.jpg",
     "byPrescription": false,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 14,
@@ -116,7 +130,8 @@
     "price": 13.7,
     "imgURL": "assets/drugs/pantap.jpg",
     "byPrescription": false,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 15,
@@ -124,7 +139,8 @@
     "price": 13.7,
     "imgURL": "assets/drugs/atarax.jpg",
     "byPrescription": true,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 16,
@@ -132,7 +148,8 @@
     "price": 13.7,
     "imgURL": "https://www.vidal.ru/upload/product_photo/sepranol.jpg",
     "byPrescription": true,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 17,
@@ -140,7 +157,8 @@
     "price": 13.0,
     "imgURL": "assets/drugs/daktazol.jpg",
     "byPrescription": true,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 13,
@@ -148,7 +166,8 @@
     "price": 14.10,
     "imgURL": "assets/drugs/refcon.jpg",
     "byPrescription": false,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 14,
@@ -156,7 +175,8 @@
     "price": 13.7,
     "imgURL": "assets/drugs/pantap.jpg",
     "byPrescription": false,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 15,
@@ -164,7 +184,8 @@
     "price": 13.7,
     "imgURL": "assets/drugs/atarax.jpg",
     "byPrescription": true,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 16,
@@ -172,7 +193,8 @@
     "price": 13.7,
     "imgURL": "https://www.vidal.ru/upload/product_photo/sepranol.jpg",
     "byPrescription": true,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 17,
@@ -180,7 +202,8 @@
     "price": 13.0,
     "imgURL": "assets/drugs/daktazol.jpg",
     "byPrescription": true,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 13,
@@ -188,7 +211,8 @@
     "price": 14.10,
     "imgURL": "assets/drugs/refcon.jpg",
     "byPrescription": false,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 14,
@@ -196,7 +220,8 @@
     "price": 13.7,
     "imgURL": "assets/drugs/pantap.jpg",
     "byPrescription": false,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 15,
@@ -204,7 +229,8 @@
     "price": 13.7,
     "imgURL": "assets/drugs/atarax.jpg",
     "byPrescription": true,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 16,
@@ -212,7 +238,8 @@
     "price": 13.7,
     "imgURLURL": "https://www.vidal.ru/upload/product_photo/sepranol.jpg",
     "byPrescription": true,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 17,
@@ -220,7 +247,8 @@
     "price": 13.0,
     "imgURL": "assets/drugs/daktazol.jpg",
     "byPrescription": true,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 13,
@@ -228,7 +256,8 @@
     "price": 14.10,
     "imgURL": "assets/drugs/refcon.jpg",
     "byPrescription": false,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 14,
@@ -236,7 +265,8 @@
     "price": 13.7,
     "imgURL": "assets/drugs/pantap.jpg",
     "byPrescription": false,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 15,
@@ -244,7 +274,8 @@
     "price": 13.7,
     "imgURL": "assets/drugs/atarax.jpg",
     "byPrescription": true,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 16,
@@ -252,7 +283,8 @@
     "price": 13.7,
     "imgURL": "https://www.vidal.ru/upload/product_photo/sepranol.jpg",
     "byPrescription": true,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 17,
@@ -260,7 +292,8 @@
     "price": 13.0,
     "imgURL": "assets/drugs/daktazol.jpg",
     "byPrescription": true,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 18,
@@ -268,7 +301,8 @@
     "price": 14.10,
     "imgURL": "assets/drugs/refcon.jpg",
     "byPrescription": false,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 19,
@@ -276,7 +310,8 @@
     "price": 13.7,
     "imgURL": "assets/drugs/pantap.jpg",
     "byPrescription": false,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 20,
@@ -284,7 +319,8 @@
     "price": 13.7,
     "imgURL": "assets/drugs/atarax.jpg",
     "byPrescription": true,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 21,
@@ -292,7 +328,8 @@
     "price": 13.7,
     "imgURL": "https://www.vidal.ru/upload/product_photo/sepranol.jpg",
     "byPrescription": true,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 22,
@@ -300,7 +337,8 @@
     "price": 13.0,
     "imgURL": "assets/drugs/daktazol.jpg",
     "byPrescription": true,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 23,
@@ -308,7 +346,8 @@
     "price": 13.7,
     "imgURL": "assets/drugs/pantap.jpg",
     "byPrescription": false,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 24,
@@ -316,7 +355,8 @@
     "price": 13.7,
     "imgURL": "assets/drugs/atarax.jpg",
     "byPrescription": true,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 25,
@@ -324,7 +364,8 @@
     "price": 13.7,
     "imgURL": "https://www.vidal.ru/upload/product_photo/sepranol.jpg",
     "byPrescription": true,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 26,
@@ -332,7 +373,8 @@
     "price": 13.0,
     "imgURL": "assets/drugs/daktazol.jpg",
     "byPrescription": true,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 27,
@@ -340,7 +382,8 @@
     "price": 14.10,
     "imgURL": "assets/drugs/refcon.jpg",
     "byPrescription": false,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 28,
@@ -348,7 +391,8 @@
     "price": 13.7,
     "imgURL": "assets/drugs/pantap.jpg",
     "byPrescription": false,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 29,
@@ -356,7 +400,8 @@
     "price": 13.7,
     "imgURL": "assets/drugs/atarax.jpg",
     "byPrescription": true,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 30,
@@ -364,7 +409,8 @@
     "price": 13.7,
     "imgURL": "https://www.vidal.ru/upload/product_photo/sepranol.jpg",
     "byPrescription": true,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   },
   {
     "id": 31,
@@ -372,6 +418,7 @@
     "price": 13.0,
     "imgURL": "assets/drugs/daktazol.jpg",
     "byPrescription": true,
-    "country":"Нидерланды"
+    "country":"Нидерланды",
+    "quantity":0
   }
 ]
