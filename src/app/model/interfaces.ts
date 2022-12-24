@@ -40,3 +40,10 @@ export interface Tile {
     rows: number;
     text: string;
   }
+  export interface TestDrug{
+    "name": string,
+    "price": number,
+    "imgURL": string,
+    "byPrescription": boolean,
+    "country":string
+  }

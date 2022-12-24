@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CartDrug, Drugs } from '../model/interfaces';
+import {Drugs, TestDrug } from '../model/interfaces';
 
 
 @Injectable({
@@ -9,11 +9,11 @@ import { CartDrug, Drugs } from '../model/interfaces';
 })
 export class DrugService implements OnInit{
   drugs:Drugs[]=[];
-  forCart:CartDrug[]=[];
-  drugCounter!:number;
-  randomDrugs:Drugs[]=[];
+  drugCounter:number;
+
   added:string|null;
    cartDrugList:Drugs[]=[]
+  testDrug:TestDrug[]
   constructor(private http:HttpClient,
     
     ) {
@@ -21,6 +21,9 @@ export class DrugService implements OnInit{
       this.drugs=response;
       this.drugCounter=this.drugs.length;
       console.log(this.drugCounter);
+      this.http.get<TestDrug[]>('assets/test.json').subscribe((response)=>{
+        this.testDrug=response
+      })
     })
   
   }
@@ -30,28 +33,13 @@ export class DrugService implements OnInit{
   ngOnInit(){
 
   }
-  FavoriteDrugs():Drugs[]{
-    let firstIndex=Math.floor(Math.random()*26) ;
-    let secondIndex=firstIndex+5;
-    for(let i=firstIndex;i<secondIndex;i++){
-      this.randomDrugs.push(this.drugs[i])
-    }
-    return this.randomDrugs
-  }
+
   public getSum():number{
     let sum=0;
     for(let i=0;i<this.cartDrugList.length;i++){
       sum+=this.cartDrugList[i].quantity
     }
     return sum
-  }
-  public getResult():number{
-    let a=0;
-    let result=0;
- for(let d of this.forCart){
-  result+=d.count*d.drug.price
- }
- return result
   }
   
 
@@ -72,18 +60,5 @@ export class DrugService implements OnInit{
   //     this.results=drugs.count*drugs.drug.price
   //   }
   // }
-  plusCount(drug:CartDrug){
-    drug.count+=1
-  }
-  minusCount(drug:CartDrug){
-    if(drug.count>0){
-      drug.count-=1;
-    }
-    if(drug.count===0){
-      this.forCart.splice(this.forCart.indexOf(drug),1)
-    }
-  }
-  deleteDrugFromCart(drug:CartDrug){
-    this.forCart.splice(this.forCart.indexOf(drug),1)
-  }
+
 }

@@ -9,6 +9,7 @@ import { ProfileComponent } from './auth/profile/profile.component';
 import { StoreComponent } from './components/store/store.component';
 import { ResetComponent } from './auth/reset/reset.component';
 import { AdvertDrugsComponent } from './components/home/advert-drugs/advert-drugs.component';
+import { TestComponent } from './components/tests/test.component';
 const redirectToLogin=()=>redirectUnauthorizedTo(['login']);
 const redirectToHome=()=>redirectLoggedInTo(['/'])
 const routes: Routes = [
@@ -41,6 +42,9 @@ const routes: Routes = [
  },
  {
   path:'advert-drug',component:AdvertDrugsComponent
+ },
+ {
+  path:'test',component:TestComponent
  }
 ]
 @NgModule({

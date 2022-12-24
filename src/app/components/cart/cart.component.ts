@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CartDrug, Drugs } from 'src/app/model/interfaces';
+import {  Drugs } from 'src/app/model/interfaces';
 import { DrugService } from 'src/app/services/drugs.service';
 
 @Component({
@@ -17,15 +17,6 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
 this.cartDrugs=this.drugService.cartDrugList;
   }
-  MinusCount(drugs:CartDrug){
-    this.drugService.minusCount(drugs)
-  }
-  PlusCount(drugs:CartDrug){
-   this.drugService.plusCount(drugs)
-  }
- 
-  DeleteDrug(drugs:CartDrug){
-    this.drugService.deleteDrugFromCart(drugs)
-  }
+
 
 }

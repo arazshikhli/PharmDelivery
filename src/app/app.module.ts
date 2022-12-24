@@ -46,6 +46,7 @@ import { drugsReducer, DrugsReducer, DRUGS_REDUCER_NODE } from './drugs.reducer'
 import { DrugsStoreService } from './drugs-store.service';
 import { SwiperModule } from 'swiper/angular';
 import { AdvertDrugsComponent } from './components/home/advert-drugs/advert-drugs.component';
+import { TestComponent } from './components/tests/test.component';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { AdvertDrugsComponent } from './components/home/advert-drugs/advert-drug
     HomeComponent,
     OrderdeliveryComponent,
     AdvertDrugsComponent,
+    TestComponent,
  
   ],
   imports: [
