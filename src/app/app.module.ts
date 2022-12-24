@@ -42,7 +42,7 @@ import { OrderdeliveryComponent } from './components/orderdelivery/orderdelivery
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import { DrugsReducer } from './drugs.reducer';
+import { drugsReducer, DrugsReducer, DRUGS_REDUCER_NODE } from './drugs.reducer';
 import { DrugsStoreService } from './drugs-store.service';
 import { SwiperModule } from 'swiper/angular';
 import { AdvertDrugsComponent } from './components/home/advert-drugs/advert-drugs.component';
@@ -99,7 +99,8 @@ import { AdvertDrugsComponent } from './components/home/advert-drugs/advert-drug
 
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production}),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([]),
+    StoreModule.forFeature(DRUGS_REDUCER_NODE,drugsReducer)
   
   ],
   

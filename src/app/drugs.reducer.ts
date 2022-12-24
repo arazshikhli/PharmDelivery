@@ -1,6 +1,12 @@
+import { state } from "@angular/animations";
 import { createReducer,on } from "@ngrx/store";
-import { AddDrugs } from "./drugs.actions";
+import { AddDrugs, removeDrugs } from "./drugs.actions";
 import { Drugs } from "./model/interfaces";
+export const DRUGS_REDUCER_NODE='todo'
+
+export const drugsReducer=(state=0,action:any)=>{
+return state
+}
 export interface DrugsState{
     all:Drugs[],
     isAdded:boolean,
@@ -17,5 +23,10 @@ return  {
     ...state,
     isAdded:true,
 }
+}),on(removeDrugs,(state:DrugsState)=>{
+    return {
+        ...state,
+        isRemoved:true
+    }
 })
 )
