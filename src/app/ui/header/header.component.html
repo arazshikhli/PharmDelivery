@@ -1,41 +1,97 @@
-<mat-toolbar color="primary">
-    <div>
-        <button mat-button routerLink="/">
-            <mat-icon>home</mat-icon>
-            Онлайн Аптека
-          </button>
-    </div>
-    <div>
-        <button mat-button routerLink="store">
-            <mat-icon>signup</mat-icon>
-            Store
-          </button>
-        <button mat-button routerLink="signup">
-          <mat-icon>signup</mat-icon>
-          Signup
-        </button>
+<div class="nav-container">
+  <div>
+    <a style="cursor:pointer;" routerLink="/">
+      <img  src="assets/images/company-logo.png" style="width: 50px;margin-left: 10px"></a>
+  </div>
+  <div>
+    <nav>
+      <ul class="nav-list">
+        <li><button mat-button routerLink="store">Store</button></li>
+        <li><button mat-button routerLink="signup">signup</button></li>
         <ng-container *ngIf="user$ |async as user; else LoginButton">
           <button mat-button [matMenuTriggerFor]="userMenu">
-            <img [src]="user.photoURL ?? '/assets/images/image-placeholder.png'"
-             alt="" width="30" height="30" 
-            class="profile-image-toolbar">
-            {{user.displayName}}
-            <mat-icon>expand_more</mat-icon>
-          </button>
+                        <img [src]="user.photoURL ?? '/assets/images/image-placeholder.png'"
+                         alt="" width="30" height="30"
+                        class="profile-image-toolbar">
+                        {{user.displayName}}
+                        <mat-icon>expand_more</mat-icon>
+                      </button>
         </ng-container>
         <ng-template #LoginButton>
           <button mat-button routerLink="login">
-            <mat-icon>login</mat-icon>
+           <mat-icon>login</mat-icon>
              Войти
-          </button>
-        </ng-template>
-        <button mat-button routerLink="cart" [matBadge]= " drugService.getSum()>0?drugService.getSum():''"
-           matBadgeColor="accent" matBadgePosition="after">
-            <mat-icon>shopping_cart_checkout</mat-icon>
-          </button>
-    </div>
-  </mat-toolbar>
-  <mat-menu #userMenu="matMenu">
-    <button mat-menu-item (click)="logout()">Выйти</button>
-    <button mat-menu-item routerLink="/profile">Профиль</button>
-</mat-menu>
+              </button>
+          </ng-template>
+        <mat-menu #userMenu="matMenu">
+              <button mat-menu-item (click)="logout()">Выйти</button>
+              <button mat-menu-item routerLink="/profile">Профиль</button>
+          </mat-menu>
+        <li> <button style="margin-right: 20px" mat-button routerLink="cart" [matBadge]= " drugService.getSum()>0?drugService.getSum():''"
+                  matBadgeColor="accent" matBadgePosition="after">
+                  <mat-icon>shopping_cart_checkout</mat-icon>
+      </button></li>
+
+      </ul>
+    </nav>
+  </div>
+
+</div>
+<!--<mat-toolbar color="primary">-->
+<!--    <div>-->
+<!--        <button mat-button routerLink="/">-->
+<!--            <mat-icon>home</mat-icon>-->
+<!--            Онлайн Аптека-->
+<!--          </button>-->
+<!--    </div>-->
+<!--    <li class="burger">-->
+<!--      <i class="material-cions">-->
+<!--        {{isMenuOpen?"close":"menu"}}-->
+<!--      </i>-->
+<!--    </li>-->
+<!--    <div class="menu" [class.is-open]="isMenuOpen">-->
+<!--        <button mat-button routerLink="store">-->
+<!--            <mat-icon>signup</mat-icon>-->
+<!--            Store-->
+<!--          </button>-->
+<!--        <button mat-button routerLink="signup">-->
+<!--          <mat-icon>signup</mat-icon>-->
+<!--          Signup-->
+<!--        </button>-->
+<!--        <ng-container *ngIf="user$ |async as user; else LoginButton">-->
+<!--          <button mat-button [matMenuTriggerFor]="userMenu">-->
+<!--            <img [src]="user.photoURL ?? '/assets/images/image-placeholder.png'"-->
+<!--             alt="" width="30" height="30"-->
+<!--            class="profile-image-toolbar">-->
+<!--            {{user.displayName}}-->
+<!--            <mat-icon>expand_more</mat-icon>-->
+<!--          </button>-->
+<!--        </ng-container>-->
+<!--        <ng-template #LoginButton>-->
+<!--          <button mat-button routerLink="login">-->
+<!--            <mat-icon>login</mat-icon>-->
+<!--             Войти-->
+<!--          </button>-->
+<!--        </ng-template>-->
+<!--        <button mat-button routerLink="cart" [matBadge]= " drugService.getSum()>0?drugService.getSum():''"-->
+<!--           matBadgeColor="accent" matBadgePosition="after">-->
+<!--            <mat-icon>shopping_cart_checkout</mat-icon>-->
+<!--          </button>-->
+<!--    </div>-->
+<!--  </mat-toolbar>-->
+<!--  <mat-menu #userMenu="matMenu">-->
+<!--    <button mat-menu-item (click)="logout()">Выйти</button>-->
+<!--    <button mat-menu-item routerLink="/profile">Профиль</button>-->
+<!--</mat-menu>-->
+<!--<header>-->
+<!--  <div class="header-container">-->
+<!--    <div class=" header-inner">-->
+<!--      <div class="logo">-->
+
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class=" header-inner">-->
+
+<!--    </div>-->
+<!--  </div>-->
+<!--</header>-->

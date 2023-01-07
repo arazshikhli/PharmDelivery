@@ -63,7 +63,7 @@ export class SignupComponent implements OnInit {
       .signUp(email, password)
       .pipe(
         switchMap(({ user: { uid } }) =>
-          this.userService.addUser({ uid, email, displayName: name })
+          this.userService.addUser({ uid, email, displayName: name})
         ),
         this.toast.observe({
           success: 'Поздравляем с регистрацией',
@@ -75,22 +75,4 @@ export class SignupComponent implements OnInit {
         this.router.navigate(['/']);
       });
   }
-  // submit(){
-  //   const{name,email,password}=this.signUpForm.value;
-  //   if(!this.signUpForm.valid){
-  //     return;
-  //   }
-   
-  //   this.auth
-  //   .signUp(email!,password!)
-  //   .pipe(
-  //     this.toast.observe({
-  //       success:"Поздравляем с регистрацией",
-  //       loading:'Регистрация...',
-  //       error: ({message})=>`${message}`
-  //     })
-  //   ).subscribe(()=>{
-  //     this.router.navigate(['/'])
-  //   })
-  // }
 }

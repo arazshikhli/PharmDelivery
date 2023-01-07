@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { DrugService } from 'src/app/services/drugs.service';
 import { Drugs } from 'src/app/model/interfaces';
-import { async, Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { DrugsStoreService } from 'src/app/drugs-store.service';
 @Component({
   selector: 'app-store',
@@ -19,6 +19,7 @@ export class StoreComponent implements OnInit {
   toggle=false
   drugs:Drugs[]
   drugSubScription:Subscription
+  addedList:string[]|null
 
   @Input()key:string
   constructor(public drugService:DrugService,
@@ -31,19 +32,17 @@ export class StoreComponent implements OnInit {
       this.drugs=data;
       this.drugStoreService.AddDrugs()
     })
+   
 
   }
   ngOnDestroy(){
-    if (this.drugSubScription) this.drugSubScription.unsubscribe();
   }
-  AddDrugs(drug:Drugs){
-   this.drugService.addDrug(drug);
-    console.log("add",this.added)
+ 
+  addDrug(drug:Drugs):boolean{
+  return this.drugService.AddToCart(drug)
+
   }
-  // RemoveDrug(drug:Drugs){
-  //   this.drugService.deleteDrug(drug)
-  //   console.log("remove",this.added)
-  // }
+
 
   }
 

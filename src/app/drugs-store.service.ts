@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Store } from "@ngrx/store";
-import { AddDrugs } from "./drugs.actions";
+import { AddDrugs, removeDrugs } from "./drugs.actions";
 import { DrugsState } from "./drugs.reducer";
 @Injectable()
 export class DrugsStoreService{
@@ -12,4 +12,7 @@ export class DrugsStoreService{
   public AddDrugs(){
     this.store.dispatch(AddDrugs())
   }  
+  public RemoveDrugs(){
+    this.store.dispatch(removeDrugs())
+  }
 }

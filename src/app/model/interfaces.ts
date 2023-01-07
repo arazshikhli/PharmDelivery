@@ -4,7 +4,9 @@ export interface Drugs{
     price:number
     imgURL:string
     byPrescription:boolean
-    country:String
+    country:String,
+    quantity:number
+
 }
 export interface ProfileUser {
     uid: string;
@@ -37,4 +39,11 @@ export interface Tile {
     cols: number;
     rows: number;
     text: string;
+  }
+  export interface TestDrug{
+    "name": string,
+    "price": number,
+    "imgURL": string,
+    "byPrescription": boolean,
+    "country":string
   }

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CartDrug, Drugs } from '../model/interfaces';
+import {Drugs, TestDrug } from '../model/interfaces';
 
 
 @Injectable({
@@ -9,20 +9,23 @@ import { CartDrug, Drugs } from '../model/interfaces';
 })
 export class DrugService implements OnInit{
   drugs:Drugs[]=[];
-  forCart:CartDrug[]=[];
-  drugCounter!:number;
-  randomDrugs:Drugs[]=[];
+  drugCounter:number;
+  result:number
   added:string|null;
-
+   cartDrugList:Drugs[]=[]
+  testDrug:TestDrug[]
   constructor(private http:HttpClient,
-    
+
     ) {
     this.http.get<Drugs[]>('assets/drugs.json').subscribe((response)=>{
       this.drugs=response;
       this.drugCounter=this.drugs.length;
       console.log(this.drugCounter);
+      this.http.get<TestDrug[]>('assets/test.json').subscribe((response)=>{
+        this.testDrug=response
+      })
     })
-  
+
   }
   getDrugs(){
     return this.http.get<Drugs[]>('assets/drugs.json')
@@ -30,54 +33,43 @@ export class DrugService implements OnInit{
   ngOnInit(){
 
   }
-  FavoriteDrugs():Drugs[]{
-    let firstIndex=Math.floor(Math.random()*26) ;
-    let secondIndex=firstIndex+5;
-    for(let i=firstIndex;i<secondIndex;i++){
-      this.randomDrugs.push(this.drugs[i])
-    }
-    return this.randomDrugs
-  }
+
   public getSum():number{
     let sum=0;
-    for(let i=0;i<this.forCart.length;i++){
-      sum+=this.forCart[i].count
+    for(let i=0;i<this.cartDrugList.length;i++){
+      sum+=this.cartDrugList[i].quantity
     }
     return sum
   }
-  public getResult():number{
-    let a=0;
-    let result=0;
- for(let d of this.forCart){
-  result+=d.count*d.drug.price
- }
- return result
-  }
-  
-  addDrug(drug:Drugs){
-    localStorage.setItem(`${drug.id}`,`${drug.name}`)
-      this.forCart.push({id:drug.id,drug:drug,count:1})
-     this.added=localStorage.getItem(`${drug.id}`);
 
-  }
- 
-  // getResult(){
-  //   for(let drugs of this.forCart){
-  //     this.results=drugs.count*drugs.drug.price
-  //   }
-  // }
-  plusCount(drug:CartDrug){
-    drug.count+=1
-  }
-  minusCount(drug:CartDrug){
-    if(drug.count>0){
-      drug.count-=1;
+
+  AddToCart(drug:Drugs):boolean{
+    if(!this.cartDrugList.includes(drug)){
+      drug.quantity+=1;
+      this.cartDrugList.push(drug);
+      return true
     }
-    if(drug.count===0){
-      this.forCart.splice(this.forCart.indexOf(drug),1)
-    }
+    return false
   }
-  deleteDrugFromCart(drug:CartDrug){
-    this.forCart.splice(this.forCart.indexOf(drug),1)
+  removeDrug(drug:Drugs){
+     let index=this.cartDrugList.indexOf(drug)
+    this.cartDrugList.splice(index,1)
+  }
+  getResult():number{
+     let res=0;
+     let finalSum=0;
+    for(let drug of this.cartDrugList){
+      res=drug.quantity*drug.price;
+      finalSum+=res
+    }
+    return finalSum
+  }
+  quantityPlus(drug:Drugs){
+     drug.quantity+=1;
+  }
+  quantityMinus(drug:Drugs){
+  if(drug.quantity>0){
+    drug.quantity-=1;
+  }
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthentificationService } from 'src/app/services/authentification.service';
@@ -11,6 +11,7 @@ import {HotToastService} from '@ngneat/hot-toast';
 })
 export class LoginComponent implements OnInit {
   hide=true
+
   loginForm=new FormGroup({
     email:new FormControl('',[Validators.required,Validators.email]),
     password:new FormControl('',[Validators.required])
@@ -43,10 +44,10 @@ export class LoginComponent implements OnInit {
       .login(email, password)
       .pipe(
         this.toast.observe({
-          success: 'Вход выполнен успешно',
-          loading: 'Загрузка...',
+          success:"Вход выполнен успешно",
           error: ({ message }) => `Произошла ошибка: ${message} `,
-        })
+          loading:"Загрузка..."
+        },)
       )
       .subscribe(() => {
         this.router.navigate(['/']);
@@ -55,4 +56,25 @@ export class LoginComponent implements OnInit {
   goToForgot(){
     this.router.navigate(['/reset'])
   }
+// }
+// Submit() {
+//   const { email, password } = this.loginForm.value;
+//
+//   if (!this.loginForm.valid || !email || !password) {
+//     return;
+//   }
+//
+//   this.auth
+//     .login(email, password)
+//     .pipe(
+//       this.toast.observe({
+//         success: 'Вход выполнен успешно',
+//         loading: 'Загрузка...',
+//         error: ({ message }) => `Произошла ошибка: ${message} `,
+//       })
+//
+//     )
+//     .subscribe(() => {
+//       this.router.navigate(['/']);
+//     });
 }

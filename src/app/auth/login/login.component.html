@@ -11,7 +11,7 @@
         <input matInput [type]="hide ? 'password' : 'text'"  formControlName="password">
         <mat-error *ngIf="password?.errors?.['required']">пароль некорректный</mat-error>
         <mat-hint align="end" class="forgot-password" (click)="goToForgot()">Забыли пароль?</mat-hint>
-        <button mat-icon-button matSuffix 
+        <button mat-icon-button matSuffix
         (click)="hide = !hide" [attr.aria-label]="'Hide password'"
          [attr.aria-pressed]="hide"
          >
@@ -20,11 +20,11 @@
       </mat-form-field>
 
     <div class="center margin-top">
-        <button mat-raised-button color="primary" type="submit">
+        <button mat-raised-button color="primary" type="submit" (click)="Submit()">
             Login
         </button>
     </div>
- 
+
     <span> Еще не зарегистрировались?  <a class="link" (click)="goToSign()"> Регистрация...</a></span>
-    </form>  
+    </form>
 </div>

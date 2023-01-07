@@ -1,0 +1,8 @@
+<div>
+  <form [formGroup]="adminLoginForm">
+    <input  matInput placeholder="Email adress" formControlName="email" type="text">
+
+    <input  matInput placeholder="Password" formControlName="password" type="password">
+    <button mat-button (click)="Submit()">Войти</button>
+  </form>
+</div>

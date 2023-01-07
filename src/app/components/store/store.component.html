@@ -17,18 +17,18 @@
         <div class="search-inner"></div>
     </div>
     <div class="cards">
-       <div class="card" *ngFor="let drug of drugs|filter:searchValue|paginate:{itemsPerPage:itemsPerPage,currentPage:page};let i=index">
+       <div class="card" *ngFor="let drug of drugService.drugs|filter:searchValue|paginate:{itemsPerPage:itemsPerPage,currentPage:page};let i=index">
         <div class="card-image"><img [src]="drug.imgURL" [alt]="drug.name"></div>
         <div class="card-info">
           <p>{{drug.name}}</p>
           <p>{{drug.country}}</p>
-          <p>{{drug.price|currency:'AZN'}}</p>
+          <p>{{drug.price|currency:'AZN':true}}</p>
         </div>
         <div class="card-button">
-          <button mat-button (click)="AddDrugs(drug)" 
-          [class]="added?'red-btn':'green-btn'"
+          <button mat-button 
+          (click)="addDrug(drug)"
+          class="green-btn"
           >Add</button>
-         
         </div>
        </div>
     </div>

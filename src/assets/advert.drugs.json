@@ -1,0 +1,62 @@
+[
+    {
+        "id": 31,
+        "name": "Daktazol",
+        "price": 13.0,
+        "imgURL": "assets/drugs/daktazol.jpg",
+        "byPrescription": true,
+        "country":"Нидерланды",
+        "company":"",
+        "quantity":0
+      },
+      {
+        "id": 31,
+        "name": "Daktazol",
+        "price": 13.0,
+        "imgURL": "assets/drugs/daktazol.jpg",
+        "byPrescription": true,
+        "country":"Нидерланды",
+        "company":"",
+        "quantity":0
+      },
+      {
+        "id": 31,
+        "name": "Daktazol",
+        "price": 13.0,
+        "imgURL": "assets/drugs/daktazol.jpg",
+        "byPrescription": true,
+        "country":"Нидерланды",
+        "company":"",
+        "quantity":0
+      },
+      {
+        "id": 31,
+        "name": "Daktazol",
+        "price": 13.0,
+        "imgURL": "assets/drugs/daktazol.jpg",
+        "byPrescription": true,
+        "country":"Нидерланды",
+        "company":"",
+        "quantity":0
+      },
+      {
+        "id": 31,
+        "name": "Daktazol",
+        "price": 13.0,
+        "imgURL": "assets/drugs/daktazol.jpg",
+        "byPrescription": true,
+        "country":"Нидерланды",
+        "company":"",
+        "quantity":0
+      },
+      {
+        "id": 31,
+        "name": "Daktazol",
+        "price": 13.0,
+        "imgURL": "assets/drugs/daktazol.jpg",
+        "byPrescription": true,
+        "country":"Нидерланды",
+        "company":"",
+        "quantity":0
+      }
+]

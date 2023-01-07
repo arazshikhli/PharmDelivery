@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Daktazol",
+        "price": 13.0,
+        "imgURL": "assets/drugs/daktazol.jpg",
+        "byPrescription": true,
+        "country":"Нидерланды"
+      },
+      {
+
+        "name": "Refcon",
+        "price": 14.10,
+        "imgURL": "assets/drugs/refcon.jpg",
+        "byPrescription": false,
+        "country":"Нидерланды"
+
+      },
+      {
+        "name": "Pantap",
+        "price": 13.7,
+        "imgURL": "assets/drugs/pantap.jpg",
+        "byPrescription": false,
+        "country":"Нидерланды"
+
+      }
+]
