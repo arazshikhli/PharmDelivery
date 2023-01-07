@@ -1,41 +1,45 @@
-<div>
+<div class="store-container">
   <div *ngIf="drugService.getSum()>0; else elseBlock"
-  > <p> Всего единиц:{{drugService.getSum()}} ед.</p>
-   Result: {{0}}
- 
-  <div *ngFor="let drug of cartDrugs">
-    <div class="store-card">
-     <div class="store-cart_image">
-       <img [src]="drug.imgURL" [alt]="drug.name">
-     </div>
-      <div class="store-cart_title">
-       <p> {{drug.name}}</p>
-       <p> {{drug.price}}</p>
-      </div>
-      <div class="store-cart_btn">
-        <!-- <button mat-button
-         (click)="PlusCount(drug)"><mat-icon>add</mat-icon></button> -->
-       <p>{{drug.quantity}}</p>
-       
-       <!-- <button mat-button 
-      (click)="MinusCount(drug)"
-       ><mat-icon>remove</mat-icon></button> -->
-     </div>
-      <div class="total">
-       <p>Итог: {{drug.quantity*drug.price |currency:"AZN"}}</p>
-      </div>
-      <div store-delete >
-       <!-- <button 
-       (click)="DeleteDrug(drug)"
-       > <mat-icon>delete</mat-icon></button> -->
+  >
+<div class="store-content">
+  <div class="cart-drugs">
+    <div *ngFor="let drug of cartDrugs">
+      <div class="store-card">
+        <div class="store-cart_image">
+          <img [src]="drug.imgURL" [alt]="drug.name">
+        </div>
+        <div class="store-cart_title">
+          <p> {{drug.name}}</p>
+          <p> {{drug.price}}</p>
+        </div>
+        <button mat-button
+                (click)="MinusCount(drug)"
+        ><mat-icon>remove</mat-icon></button>
+        <p>{{drug.quantity}}</p>
+        <div class="store-cart_btn">
+          <button mat-button
+                  (click)="PlusCount(drug)"><mat-icon>add</mat-icon></button>
+        </div>
+        <div class="total">
+          <p>Итог: {{drug.quantity*drug.price |currency:"AZN"}}</p>
+        </div>
+        <div >
+          <button
+            (click)="DeleteDrug(drug)"
+            mat-button
+          > <mat-icon>delete</mat-icon></button>
+        </div>
       </div>
     </div>
-   </div>
-   <div>
-    <p>оформить доставку</p>
-    <button mat-button routerLink="order" routerLinkActive="active">Перейти к заказу</button>
-   </div>
-  
+  </div>
+
+  <div class="cart_final-result">
+  <h3>Информация о заказе</h3>
+    <p>Товары ..................{{drugService.getSum()}} штук</p>
+    <p> Итог .................. {{drugService.getResult()|currency:"AZN"}}</p>
+    <button mat-button class="order-btn"> Заказать доставку</button>
+  </div>
+</div>
    </div>
    <ng-template #elseBlock>
     <p>Корзина пуста</p>

@@ -19,4 +19,15 @@ this.cartDrugs=this.drugService.cartDrugList;
   }
 
 
+  DeleteDrug(drug: Drugs) {
+  this.drugService.removeDrug(drug)
+  }
+
+  PlusCount(drug: Drugs) {
+    this.drugService.quantityPlus(drug)
+  }
+
+  MinusCount(drug: Drugs) {
+    this.drugService.quantityMinus(drug)
+  }
 }

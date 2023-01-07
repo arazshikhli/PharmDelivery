@@ -1,0 +1,11 @@
+<google-map
+  height="900px"
+  width="900px"
+  [zoom]="zoom"
+  [center]="center"
+  [options]="options"
+
+></google-map>
+<!-- Use custom zoom buttons -->
+<button mat-button (click)="zoomIn()">Zoom in</button>
+<button mat-button (click)="zoomOut()">Zoom out</button>

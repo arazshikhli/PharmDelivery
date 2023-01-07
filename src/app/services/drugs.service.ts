@@ -10,12 +10,12 @@ import {Drugs, TestDrug } from '../model/interfaces';
 export class DrugService implements OnInit{
   drugs:Drugs[]=[];
   drugCounter:number;
-
+  result:number
   added:string|null;
    cartDrugList:Drugs[]=[]
   testDrug:TestDrug[]
   constructor(private http:HttpClient,
-    
+
     ) {
     this.http.get<Drugs[]>('assets/drugs.json').subscribe((response)=>{
       this.drugs=response;
@@ -25,7 +25,7 @@ export class DrugService implements OnInit{
         this.testDrug=response
       })
     })
-  
+
   }
   getDrugs(){
     return this.http.get<Drugs[]>('assets/drugs.json')
@@ -41,7 +41,7 @@ export class DrugService implements OnInit{
     }
     return sum
   }
-  
+
 
   AddToCart(drug:Drugs):boolean{
     if(!this.cartDrugList.includes(drug)){
@@ -52,13 +52,24 @@ export class DrugService implements OnInit{
     return false
   }
   removeDrug(drug:Drugs){
-    this.cartDrugList.unshift(drug);
-    localStorage.removeItem(`${drug.id}`);
+     let index=this.cartDrugList.indexOf(drug)
+    this.cartDrugList.splice(index,1)
   }
-  // getResult(){
-  //   for(let drugs of this.forCart){
-  //     this.results=drugs.count*drugs.drug.price
-  //   }
-  // }
-
+  getResult():number{
+     let res=0;
+     let finalSum=0;
+    for(let drug of this.cartDrugList){
+      res=drug.quantity*drug.price;
+      finalSum+=res
+    }
+    return finalSum
+  }
+  quantityPlus(drug:Drugs){
+     drug.quantity+=1;
+  }
+  quantityMinus(drug:Drugs){
+  if(drug.quantity>0){
+    drug.quantity-=1;
+  }
+  }
 }

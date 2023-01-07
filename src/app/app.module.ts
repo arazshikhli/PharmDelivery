@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
 import {MatBadgeModule} from '@angular/material/badge';
@@ -42,12 +43,13 @@ import { OrderdeliveryComponent } from './components/orderdelivery/orderdelivery
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import { drugsReducer, DrugsReducer, DRUGS_REDUCER_NODE } from './drugs.reducer';
+import { DrugsReducer } from './drugs.reducer';
 import { DrugsStoreService } from './drugs-store.service';
 import { SwiperModule } from 'swiper/angular';
 import { AdvertDrugsComponent } from './components/home/advert-drugs/advert-drugs.component';
 import { TestComponent } from './components/tests/test.component';
-
+import { PartnersComponent } from './components/partners/partners.component';
+import { GoogleMapsModule } from '@angular/google-maps'
 
 @NgModule({
   declarations: [
@@ -66,9 +68,11 @@ import { TestComponent } from './components/tests/test.component';
     OrderdeliveryComponent,
     AdvertDrugsComponent,
     TestComponent,
- 
+    PartnersComponent,
+
   ],
   imports: [
+    GoogleMapsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -84,6 +88,7 @@ import { TestComponent } from './components/tests/test.component';
     MatBadgeModule,
     NgxPaginationModule,
     MatGridListModule,
+    MatSidenavModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),
@@ -101,11 +106,12 @@ import { TestComponent } from './components/tests/test.component';
 
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production}),
-    EffectsModule.forRoot([]),
-    StoreModule.forFeature(DRUGS_REDUCER_NODE,drugsReducer)
-  
+    EffectsModule.forRoot([])
+
   ],
-  
+  exports:[
+    MatSidenavModule
+  ],
   providers: [
     ScreenTrackingService,UserTrackingService,
     DrugsStoreService,

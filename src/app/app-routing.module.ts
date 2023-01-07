@@ -10,6 +10,8 @@ import { StoreComponent } from './components/store/store.component';
 import { ResetComponent } from './auth/reset/reset.component';
 import { AdvertDrugsComponent } from './components/home/advert-drugs/advert-drugs.component';
 import { TestComponent } from './components/tests/test.component';
+import {PartnersComponent} from "./components/partners/partners.component";
+import {AdminLayoutComponent} from "./admin/admin-layout/admin-layout.component";
 const redirectToLogin=()=>redirectUnauthorizedTo(['login']);
 const redirectToHome=()=>redirectLoggedInTo(['/'])
 const routes: Routes = [
@@ -22,15 +24,15 @@ const routes: Routes = [
   },
   {
     path:"login",component:LoginComponent,
- 
-    
+
+
   },
   {path:'reset',component:ResetComponent
-      
+
     },
   {
     path:"cart",component:CartComponent,
-    ...canActivate(redirectToLogin)
+
   },
 
   {
@@ -45,7 +47,14 @@ const routes: Routes = [
  },
  {
   path:'test',component:TestComponent
- }
+ },
+  {
+    path:'partners',component:PartnersComponent
+  },
+  {
+    path:'admin',component:AdminLayoutComponent
+    // path:'admin',loadChildren:()=>import('./admin/admin.module').then(m=>m.AdminModule)
+  }
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
